@@ -1,0 +1,25 @@
+<!-- result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <p>Your feedback sentiment:</p>
+        <div>
+            {% if sentiment == "Positive" %}
+                <img src="{{ url_for('static', filename='positive.png') }}" alt="Positive Emoji">
+            {% elif sentiment == "Negative" %}
+                <img src="{{ url_for('static', filename='negative.png') }}" alt="Negative Emoji">
+            {% else %}
+                <img src="{{ url_for('static', filename='neutral.png') }}" alt="Neutral Emoji">
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
